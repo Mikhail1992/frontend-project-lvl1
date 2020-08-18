@@ -1,0 +1,24 @@
+{
+  "name": "frontend-project-lvl1",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "bin": {
+    "frontend-project-lvl1": "brain-games.js"
+  },
+  "scripts": {
+    "start": "node bin/brain-games.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Mikhail1992/frontend-project-lvl1.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Mikhail1992/frontend-project-lvl1/issues"
+  },
+  "homepage": "https://github.com/Mikhail1992/frontend-project-lvl1#readme"
+}
