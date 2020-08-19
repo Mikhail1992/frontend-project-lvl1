@@ -8,7 +8,6 @@
   },
   "scripts": {
     "start": "node bin/brain-games.js",
-    "eslint": "eslint",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
