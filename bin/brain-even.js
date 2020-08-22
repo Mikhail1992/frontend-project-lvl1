@@ -2,17 +2,19 @@
 
 import readlineSync from 'readline-sync';
 
-import { bootstrap } from './cli.js';
+import { getWelcomeUser } from './cli.js';
 import { getRandomInt, isEven, getAnswer } from './utils.js';
 
 const question = 'Answer \'yes\' if the number is even, otherwise answer \'no\'';
+const rounds = 3;
 
-const gameCb = (name) => {
-  const rounds = 3;
+const startGame = () => {
+  const userName = getWelcomeUser();
+  console.log(question);
 
   const gameIterator = (acc) => {
     if (!acc) {
-      console.log(`Congratulations, ${name}!`);
+      console.log(`Congratulations, ${userName}!`);
       return;
     }
 
@@ -26,7 +28,7 @@ const gameCb = (name) => {
       console.log(
         `'${userAnswer}' is wrong answer ;(. Correct answer was '${answer}'\nLet's try again`,
       );
-      gameIterator(acc);
+      gameIterator(rounds);
     } else {
       console.log('Correct!');
       gameIterator(acc - 1);
@@ -36,4 +38,4 @@ const gameCb = (name) => {
   gameIterator(rounds);
 };
 
-bootstrap(question, gameCb);
+startGame();

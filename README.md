@@ -3,4 +3,4 @@
 
 ## Brain Even
 
-<a href="https://asciinema.org/a/12Xp7g3wUikEIhH038hRgW0Wx" target="_blank"><img src="https://asciinema.org/a/12Xp7g3wUikEIhH038hRgW0Wx.svg" /></a>
+<a href="https://asciinema.org/a/XeaPpKHPTMUhniahFJ696F69N" target="_blank"><img src="https://asciinema.org/a/XeaPpKHPTMUhniahFJ696F69N.svg" /></a>

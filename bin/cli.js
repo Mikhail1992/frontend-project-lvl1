@@ -11,15 +11,7 @@ export function getWelcomeUser() {
   return name;
 }
 
-export function bootstrap(question, gameCb) {
+export function bootstrap() {
   console.log('Welcome to the Brain Games!');
-  const userName = getWelcomeUser();
-
-  if (question) {
-    console.log(question);
-  }
-
-  if (gameCb) {
-    gameCb(userName);
-  }
+  getWelcomeUser();
 }
