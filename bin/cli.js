@@ -1,18 +1,25 @@
-import readlineSync from 'readline-sync';
+import readlineSync from "readline-sync";
 
-function getWelcomeUser() {
-  const name = readlineSync.question('May I have your name? ');
+export function getWelcomeUser() {
+  const name = readlineSync.question("May I have your name? ");
 
   if (!name) {
-    getWelcomeUser();
+    return getWelcomeUser();
   } else {
     console.log(`Hello, ${name}!`);
+    return name;
   }
 }
 
-function getWelcomeMessage() {
-  console.log('Welcome to the Brain Games!');
-  getWelcomeUser();
-}
+export function bootstrap(question, gameCb) {
+  console.log("Welcome to the Brain Games!");
+  const userName = getWelcomeUser();
 
-export default getWelcomeMessage;
+  if (question) {
+    console.log(question);
+  }
+
+  if (gameCb) {
+    gameCb(userName);
+  }
+}
