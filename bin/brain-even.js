@@ -1,11 +1,11 @@
 #!/usr/bin/env node
 
-import readlineSync from "readline-sync";
+import readlineSync from 'readline-sync';
 
-import { bootstrap } from "./cli.js";
-import { getRandomInt, isEven, getAnswer } from "./utils.js";
+import { bootstrap } from './cli.js';
+import { getRandomInt, isEven, getAnswer } from './utils.js';
 
-const question = 'Answer "yes" if the number is even, otherwise answer "no"';
+const question = 'Answer \'yes\' if the number is even, otherwise answer \'no\'';
 
 const gameCb = (name) => {
   const rounds = 3;
@@ -20,15 +20,15 @@ const gameCb = (name) => {
     console.log(`Question: ${randomNumber}`);
 
     const answer = getAnswer(isEven(randomNumber));
-    const userAnswer = readlineSync.question("Answer: ");
+    const userAnswer = readlineSync.question('Answer: ');
 
     if (userAnswer !== answer) {
       console.log(
-        `'${userAnswer}' is wrong answer ;(. Correct answer was '${answer}'\nLet's try again`
+        `'${userAnswer}' is wrong answer ;(. Correct answer was '${answer}'\nLet's try again`,
       );
       gameIterator(acc);
     } else {
-      console.log("Correct!");
+      console.log('Correct!');
       gameIterator(acc - 1);
     }
   };

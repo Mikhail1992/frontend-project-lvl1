@@ -1,5 +1,5 @@
 #!/usr/bin/env node
 
-import { bootstrap } from "./cli.js";
+import { bootstrap } from './cli.js';
 
 bootstrap();

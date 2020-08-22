@@ -1,18 +1,18 @@
-import readlineSync from "readline-sync";
+import readlineSync from 'readline-sync';
 
 export function getWelcomeUser() {
-  const name = readlineSync.question("May I have your name? ");
+  const name = readlineSync.question('May I have your name? ');
 
   if (!name) {
     return getWelcomeUser();
-  } else {
-    console.log(`Hello, ${name}!`);
-    return name;
   }
+
+  console.log(`Hello, ${name}!`);
+  return name;
 }
 
 export function bootstrap(question, gameCb) {
-  console.log("Welcome to the Brain Games!");
+  console.log('Welcome to the Brain Games!');
   const userName = getWelcomeUser();
 
   if (question) {
