@@ -6,6 +6,7 @@ const rounds = 3;
 
 const runGame = (title, gameCb) => {
   const userName = getWelcomeUser();
+  console.log(title);
 
   const gameIterator = (acc) => {
     const { question, answer } = gameCb();
