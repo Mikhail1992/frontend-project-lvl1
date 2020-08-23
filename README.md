@@ -7,3 +7,6 @@
 
 ## Brain Calc
 <a href="https://asciinema.org/a/Scy4328p3G5Va4GYDuOgxVuJb" target="_blank"><img src="https://asciinema.org/a/Scy4328p3G5Va4GYDuOgxVuJb.svg" /></a>
+
+## Brain GCD
+<a href="https://asciinema.org/a/1ASElKKr46hruUGIxHFu4okBM" target="_blank"><img src="https://asciinema.org/a/1ASElKKr46hruUGIxHFu4okBM.svg" /></a>
