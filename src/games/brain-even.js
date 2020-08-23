@@ -1,12 +1,11 @@
 #!/usr/bin/env node
 
-import { getRandomInt } from '../utils.js';
+import { getRandomInt, getAnswer } from '../utils.js';
 import runGame from '../index.js';
 
 const title = 'Answer \'yes\' if the number is even, otherwise answer \'no\'';
 
 const isEven = (num) => num % 2 === 0;
-const getAnswer = (answer) => (answer ? 'yes' : 'no');
 
 const gameCb = () => {
   const randomNumber = getRandomInt(0, 20);
