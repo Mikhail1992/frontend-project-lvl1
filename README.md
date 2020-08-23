@@ -4,3 +4,6 @@
 ## Brain Even
 
 <a href="https://asciinema.org/a/XeaPpKHPTMUhniahFJ696F69N" target="_blank"><img src="https://asciinema.org/a/XeaPpKHPTMUhniahFJ696F69N.svg" /></a>
+
+## Brain Calc
+<a href="https://asciinema.org/a/Scy4328p3G5Va4GYDuOgxVuJb" target="_blank"><img src="https://asciinema.org/a/Scy4328p3G5Va4GYDuOgxVuJb.svg" /></a>

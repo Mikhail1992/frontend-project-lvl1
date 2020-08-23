@@ -1,34 +1,28 @@
-#!/usr/bin/env node
-
 import readlineSync from 'readline-sync';
 
-import { getWelcomeUser } from './cli.js';
-import { getRandomInt, isEven, getAnswer } from './utils.js';
+import { getWelcomeUser } from './bin/cli.js';
 
-const question = 'Answer \'yes\' if the number is even, otherwise answer \'no\'';
 const rounds = 3;
 
-const startGame = () => {
+const runGame = (title, gameCb) => {
   const userName = getWelcomeUser();
-  console.log(question);
+  console.log(title);
 
   const gameIterator = (acc) => {
+    const { question, answer } = gameCb();
     if (!acc) {
       console.log(`Congratulations, ${userName}!`);
       return;
     }
 
-    const randomNumber = getRandomInt(0, 20);
-    console.log(`Question: ${randomNumber}`);
+    console.log(`Question: ${question}`);
 
-    const answer = getAnswer(isEven(randomNumber));
     const userAnswer = readlineSync.question('Answer: ');
 
     if (userAnswer !== answer) {
       console.log(
         `'${userAnswer}' is wrong answer ;(. Correct answer was '${answer}'\nLet's try again`,
       );
-      gameIterator(rounds);
     } else {
       console.log('Correct!');
       gameIterator(acc - 1);
@@ -38,4 +32,4 @@ const startGame = () => {
   gameIterator(rounds);
 };
 
-startGame();
+export default runGame;
