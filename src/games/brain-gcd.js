@@ -3,7 +3,7 @@
 import { getRandomInt } from '../utils.js';
 import runGame from '../index.js';
 
-const question = 'Find the greatest common divisor of given numbers.';
+const title = 'Find the greatest common divisor of given numbers.';
 
 const getGCD = (num1, num2) => {
   const min = num1 < num2 ? num1 : num2;
@@ -28,4 +28,4 @@ const gameCb = () => {
   };
 };
 
-runGame(question, gameCb);
+runGame(title, gameCb);

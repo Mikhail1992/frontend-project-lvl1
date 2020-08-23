@@ -3,7 +3,7 @@
 import { getRandomInt } from '../utils.js';
 import runGame from '../index.js';
 
-const question = 'What is the result of the expression?';
+const title = 'What is the result of the expression?';
 
 const expressions = {
   '*': (a, b) => a * b,
@@ -31,4 +31,4 @@ const gameCb = () => {
   };
 };
 
-runGame(question, gameCb);
+runGame(title, gameCb);

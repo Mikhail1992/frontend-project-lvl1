@@ -3,7 +3,7 @@
 import { getRandomInt } from '../utils.js';
 import runGame from '../index.js';
 
-const question = 'Answer \'yes\' if the number is even, otherwise answer \'no\'';
+const title = 'Answer \'yes\' if the number is even, otherwise answer \'no\'';
 
 const isEven = (num) => num % 2 === 0;
 const getAnswer = (answer) => (answer ? 'yes' : 'no');
@@ -19,4 +19,4 @@ const gameCb = () => {
   };
 };
 
-runGame(question, gameCb);
+runGame(title, gameCb);
