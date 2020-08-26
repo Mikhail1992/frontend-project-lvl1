@@ -11,10 +11,12 @@ const getProgressionList = () => {
   const startNum = getRandomInt(1, 10);
   const step = getRandomInt(1, 10);
 
-  return Array(stepsCount).fill().map((_, index) => startNum + index * step);
+  return Array(stepsCount)
+    .fill()
+    .map((_, index) => startNum + index * step);
 };
 
-const gameCb = () => {
+const genRoundData = () => {
   const answerIndex = getRandomInt(0, stepsCount - 1);
   const listOfProgression = getProgressionList();
 
@@ -32,4 +34,4 @@ const gameCb = () => {
   };
 };
 
-runGame(title, gameCb);
+runGame(title, genRoundData);

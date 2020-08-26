@@ -1,20 +1,27 @@
 #!/usr/bin/env node
 
-import { getRandomInt, getAnswer } from '../utils.js';
+import { getRandomInt } from '../utils.js';
 import runGame from '../index.js';
 
 const title = 'Answer "yes" if given number is prime. Otherwise answer "no".';
 
-const isPrime = (num) => {
-  if (num < 2) return false;
+const isPrime = (number) => {
+  if (number < 2) {
+    return false;
+  }
 
-  const dividers = [2, 3, 5, 7];
+  for (let i = 2; i <= number / 2; i += 1) {
+    if (number % i === 0) {
+      return false;
+    }
+  }
 
-  const hasDivider = dividers.some((item) => num % item === 0);
-  return dividers.includes(num) || !hasDivider;
+  return true;
 };
 
-const gameCb = () => {
+const getAnswer = (answer) => (answer ? 'yes' : 'no');
+
+const genRoundData = () => {
   const question = getRandomInt(0, 1000);
   const answer = getAnswer(isPrime(question));
 
@@ -24,4 +31,4 @@ const gameCb = () => {
   };
 };
 
-runGame(title, gameCb);
+runGame(title, genRoundData);

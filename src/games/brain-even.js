@@ -1,13 +1,14 @@
 #!/usr/bin/env node
 
-import { getRandomInt, getAnswer } from '../utils.js';
+import { getRandomInt } from '../utils.js';
 import runGame from '../index.js';
 
-const title = 'Answer \'yes\' if the number is even, otherwise answer \'no\'';
+const title = "Answer 'yes' if the number is even, otherwise answer 'no'";
 
 const isEven = (num) => num % 2 === 0;
+const getAnswer = (answer) => (answer ? 'yes' : 'no');
 
-const gameCb = () => {
+const genRoundData = () => {
   const randomNumber = getRandomInt(0, 20);
 
   const answer = getAnswer(isEven(randomNumber));
@@ -18,4 +19,4 @@ const gameCb = () => {
   };
 };
 
-runGame(title, gameCb);
+runGame(title, genRoundData);

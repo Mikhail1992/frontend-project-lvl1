@@ -5,18 +5,15 @@ import runGame from '../index.js';
 
 const title = 'Find the greatest common divisor of given numbers.';
 
-const getGCD = (num1, num2) => {
-  const min = num1 < num2 ? num1 : num2;
-  const max = num2 < num1 ? num1 : num2;
-  const remainder = max % min;
-  if (!remainder) {
-    return min;
+const getGCD = (a, b) => {
+  if (b === 0) {
+    return a;
   }
 
-  return getGCD(min, remainder);
+  return getGCD(b, a % b);
 };
 
-const gameCb = () => {
+const genRoundData = () => {
   const randomNumber1 = getRandomInt(0, 20);
   const randomNumber2 = getRandomInt(0, 20);
 
@@ -28,4 +25,4 @@ const gameCb = () => {
   };
 };
 
-runGame(title, gameCb);
+runGame(title, genRoundData);

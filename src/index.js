@@ -1,15 +1,18 @@
 import readlineSync from 'readline-sync';
 
-import { getWelcomeUser } from './bin/cli.js';
+const roundsCount = 3;
 
-const rounds = 3;
+const getUserName = () => readlineSync.question('May I have your name? ', {
+  defaultInput: 'User',
+});
 
-const runGame = (title, gameCb) => {
-  const userName = getWelcomeUser();
+const runGame = (title, genRoundData) => {
+  const userName = getUserName();
+  console.log(`Hello, ${userName}!`);
   console.log(title);
 
-  const gameIterator = (acc) => {
-    const { question, answer } = gameCb();
+  const runGameRound = (acc) => {
+    const { question, answer } = genRoundData();
     if (!acc) {
       console.log(`Congratulations, ${userName}!`);
       return;
@@ -19,17 +22,17 @@ const runGame = (title, gameCb) => {
 
     const userAnswer = readlineSync.question('Answer: ');
 
-    if (userAnswer !== answer) {
-      console.log(
-        `'${userAnswer}' is wrong answer ;(. Correct answer was '${answer}'\nLet's try again`,
-      );
-    } else {
+    if (userAnswer === answer) {
       console.log('Correct!');
-      gameIterator(acc - 1);
+      runGameRound(acc - 1);
     }
+
+    console.log(
+      `'${userAnswer}' is wrong answer ;(. Correct answer was '${answer}'\nLet's try again`,
+    );
   };
 
-  gameIterator(rounds);
+  runGameRound(roundsCount);
 };
 
 export default runGame;

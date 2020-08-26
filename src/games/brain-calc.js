@@ -17,7 +17,7 @@ const getRandomExpression = () => {
   return keys[index];
 };
 
-const gameCb = () => {
+const genRoundData = () => {
   const randomNumber1 = getRandomInt(0, 20);
   const randomNumber2 = getRandomInt(0, 20);
   const operator = getRandomExpression();
@@ -31,4 +31,4 @@ const gameCb = () => {
   };
 };
 
-runGame(title, gameCb);
+runGame(title, genRoundData);
