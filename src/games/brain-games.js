@@ -1,5 +1,11 @@
-#!/usr/bin/env node
+import readlineSync from 'readline-sync';
 
-import bootstrap from '../../bin/cli.js';
+const getUserName = () => readlineSync.question('May I have your name? ', {
+  defaultInput: 'User',
+});
 
-bootstrap();
+export default () => {
+  console.log('Welcome to the Brain Games!');
+  const userName = getUserName();
+  console.log(`Hello, ${userName}!`);
+};

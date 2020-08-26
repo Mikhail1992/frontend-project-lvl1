@@ -14,8 +14,7 @@ const runGame = (title, genRoundData) => {
   const runGameRound = (acc) => {
     const { question, answer } = genRoundData();
     if (!acc) {
-      console.log(`Congratulations, ${userName}!`);
-      return;
+      return console.log(`Congratulations, ${userName}!`);
     }
 
     console.log(`Question: ${question}`);
@@ -24,10 +23,10 @@ const runGame = (title, genRoundData) => {
 
     if (userAnswer === answer) {
       console.log('Correct!');
-      runGameRound(acc - 1);
+      return runGameRound(acc - 1);
     }
 
-    console.log(
+    return console.log(
       `'${userAnswer}' is wrong answer ;(. Correct answer was '${answer}'\nLet's try again`,
     );
   };

@@ -1,5 +1,3 @@
-#!/usr/bin/env node
-
 import { getRandomInt } from '../utils.js';
 import runGame from '../index.js';
 
@@ -34,4 +32,4 @@ const genRoundData = () => {
   };
 };
 
-runGame(title, genRoundData);
+export default () => runGame(title, genRoundData);
