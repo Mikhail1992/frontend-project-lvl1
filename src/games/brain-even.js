@@ -4,15 +4,15 @@ import runGame from '../index.js';
 const title = "Answer 'yes' if the number is even, otherwise answer 'no'";
 
 const isEven = (num) => num % 2 === 0;
-const getAnswer = (answer) => (answer ? 'yes' : 'no');
 
 const genRoundData = () => {
-  const randomNumber = getRandomInt(0, 20);
+  const number = getRandomInt(0, 20);
 
-  const answer = getAnswer(isEven(randomNumber));
+  const question = String(number);
+  const answer = isEven(number) ? 'yes' : 'no';
 
   return {
-    question: randomNumber,
+    question,
     answer,
   };
 };

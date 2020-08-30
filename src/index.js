@@ -14,21 +14,23 @@ const runGame = (title, genRoundData) => {
   const runGameRound = (acc) => {
     const { question, answer } = genRoundData();
     if (!acc) {
-      return console.log(`Congratulations, ${userName}!`);
+      console.log(`Congratulations, ${userName}!`);
+      return;
     }
 
     console.log(`Question: ${question}`);
 
     const userAnswer = readlineSync.question('Answer: ');
 
-    if (userAnswer === answer) {
-      console.log('Correct!');
-      return runGameRound(acc - 1);
+    if (userAnswer !== answer) {
+      console.log(
+        `'${userAnswer}' is wrong answer ;(. Correct answer was '${answer}'\nLet's try again`,
+      );
+      return;
     }
 
-    return console.log(
-      `'${userAnswer}' is wrong answer ;(. Correct answer was '${answer}'\nLet's try again`,
-    );
+    console.log('Correct!');
+    runGameRound(acc - 1);
   };
 
   runGameRound(roundsCount);

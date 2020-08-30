@@ -9,22 +9,24 @@ const expressions = {
   '-': (a, b) => a - b,
 };
 
-const getRandomExpression = () => {
-  const keys = ['*', '+', '-'];
-  const index = getRandomInt(0, keys.length - 1);
-  return keys[index];
+const keys = Object.keys(expressions);
+
+const getRandomExpression = (operations) => {
+  const index = getRandomInt(0, operations.length - 1);
+  return operations[index];
 };
 
 const genRoundData = () => {
-  const randomNumber1 = getRandomInt(0, 20);
-  const randomNumber2 = getRandomInt(0, 20);
-  const operator = getRandomExpression();
+  const number1 = getRandomInt(0, 20);
+  const number2 = getRandomInt(0, 20);
+  const operator = getRandomExpression(keys);
 
-  const fn = expressions[operator];
-  const answer = `${fn(randomNumber1, randomNumber2)}`;
+  const calculate = expressions[operator];
+  const question = `${number1} ${operator} ${number2}`;
+  const answer = String(calculate(number1, number2));
 
   return {
-    question: `${randomNumber1} ${operator} ${randomNumber2}`,
+    question,
     answer,
   };
 };

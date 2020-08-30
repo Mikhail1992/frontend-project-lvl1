@@ -3,28 +3,27 @@ import runGame from '../index.js';
 
 const title = 'What number is missing in the progression?';
 
-const stepsCount = 10;
+const progressionLength = 10;
 
-const getProgressionList = () => {
-  const startNum = getRandomInt(1, 10);
-  const step = getRandomInt(1, 10);
-
-  return Array(stepsCount)
-    .fill()
-    .map((_, index) => startNum + index * step);
-};
+const makeProgression = (start, step, length) => Array(length)
+  .fill()
+  .map((_, index) => start + index * step);
 
 const genRoundData = () => {
-  const answerIndex = getRandomInt(0, stepsCount - 1);
-  const listOfProgression = getProgressionList();
+  const answerIndex = getRandomInt(0, progressionLength - 1);
+  const startProgressionNumber = getRandomInt(1, 10);
+  const progressionStep = getRandomInt(1, 10);
+  const progression = makeProgression(
+    startProgressionNumber,
+    progressionStep,
+    progressionLength,
+  );
 
-  const answer = `${listOfProgression[answerIndex]}`;
-  const question = listOfProgression.reduce((acc, num, index) => {
-    if (index === answerIndex) {
-      return `${acc} ..`;
-    }
-    return `${acc} ${num}`;
-  }, '');
+  const progressionClone = progression.slice();
+  progressionClone[answerIndex] = '..';
+
+  const question = progressionClone.join(' ');
+  const answer = String(progression[answerIndex]);
 
   return {
     question,

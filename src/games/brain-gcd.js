@@ -12,13 +12,14 @@ const getGCD = (a, b) => {
 };
 
 const genRoundData = () => {
-  const randomNumber1 = getRandomInt(0, 20);
-  const randomNumber2 = getRandomInt(0, 20);
+  const number1 = getRandomInt(0, 20);
+  const number2 = getRandomInt(0, 20);
 
-  const answer = `${getGCD(randomNumber1, randomNumber2)}`;
+  const question = `${number1} ${number2}`;
+  const answer = String(getGCD(number1, number2));
 
   return {
-    question: `${randomNumber1} ${randomNumber2}`,
+    question,
     answer,
   };
 };

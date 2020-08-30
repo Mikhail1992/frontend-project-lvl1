@@ -17,11 +17,9 @@ const isPrime = (number) => {
   return true;
 };
 
-const getAnswer = (answer) => (answer ? 'yes' : 'no');
-
 const genRoundData = () => {
-  const question = getRandomInt(0, 1000);
-  const answer = getAnswer(isPrime(question));
+  const question = String(getRandomInt(0, 1000));
+  const answer = isPrime(question) ? 'yes' : 'no';
 
   return {
     question,
